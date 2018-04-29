@@ -1,0 +1,63 @@
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: paper.aux
+The style file: IEEEtranS.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: bibliography.bib
+I was expecting a `,' or a `}'---line 16 of file bibliography.bib
+ : BibTeX. @misc{Piotte 
+ :                      09th Pragmatic, author = {Martin Piotte and Martin Chabbert}, title = {The Pragmatic Theory Solution to the Netflix Grand Prize, in: Netflix prize documentation}, year = {2009}
+I'm skipping whatever remains of this entry
+-- IEEEtranS.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+** Sorting version - not for normal IEEE work.
+Warning--empty journal in He2017
+
+Done.
+You've used 1 entry,
+            4566 wiz_defined-function locations,
+            908 strings with 8189 characters,
+and the built_in function-call counts, 826 in all, are:
+= -- 60
+> -- 38
+< -- 0
++ -- 18
+- -- 12
+* -- 66
+:= -- 148
+add.period$ -- 2
+call.type$ -- 1
+change.case$ -- 9
+chr.to.int$ -- 0
+cite$ -- 2
+duplicate$ -- 43
+empty$ -- 45
+format.name$ -- 13
+if$ -- 152
+int.to.chr$ -- 0
+int.to.str$ -- 1
+missing$ -- 10
+newline$ -- 28
+num.names$ -- 2
+pop$ -- 36
+preamble$ -- 1
+purify$ -- 8
+quote$ -- 2
+skip$ -- 44
+stack$ -- 0
+substring$ -- 6
+swap$ -- 25
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 6
+type$ -- 11
+warning$ -- 1
+while$ -- 2
+width$ -- 2
+write$ -- 32
+(There was 1 error message)
