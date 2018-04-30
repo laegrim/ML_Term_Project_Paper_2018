@@ -21,11 +21,41 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{netflixPrize}
+\BIBentryALTinterwordspacing
+ [Online]. Available: \url{https://www.netflixprize.com/index.html}
+\BIBentrySTDinterwordspacing
+
+\bibitem{dataage2025}
+\BIBentryALTinterwordspacing
+J.~R. David~Reinsel, John~Gantz, ``Data age 2025: The evolution of data to
+  life-critical,'' 04 2017. [Online]. Available:
+  \url{https://www.seagate.com/files/www-content/our-story/trends/files/Seagate-WP-DataAge2025-March-2017.pdf}
+\BIBentrySTDinterwordspacing
+
+\bibitem{imagenet}
+J.~Deng, W.~Dong, R.~Socher, L.-J. Li, K.~Li, and F.-F. Li, ``Imagenet: a
+  large-scale hierarchical image database,'' pp. 248--255, 06 2009.
+
 \bibitem{He2017}
 \BIBentryALTinterwordspacing
 X.~He, L.~Liao, H.~Zhang, L.~Nie, X.~Hu, and T.-S. Chua, ``{Neural
   Collaborative Filtering},'' 2017. [Online]. Available:
   \url{http://arxiv.org/abs/1708.05031}
+\BIBentrySTDinterwordspacing
+
+\bibitem{imagenetReasons}
+\BIBentryALTinterwordspacing
+H.~Quentin, ``Reasons to believe the a.i. boom is real,'' 03 2018. [Online].
+  Available:
+  \url{https://www.nytimes.com/2016/07/19/technology/reasons-to-believe-the-ai-boom-is-real.html}
+\BIBentrySTDinterwordspacing
+
+\bibitem{dataRizzatti}
+\BIBentryALTinterwordspacing
+L.~Rizzatti, ``Digital data storage is undergoing mind-boggling growth,'' 09
+  2016. [Online]. Available:
+  \url{https://www.eetimes.com/author.asp?section_id=36&doc_id=1330462}
 \BIBentrySTDinterwordspacing
 
 \end{thebibliography}
