@@ -1,5 +1,4 @@
 \section{Experiments}
-\subsection{Characteristics of the Netflix Dataset}
 \subsection{Naive Feed-forward Deep Neural Networks}
 
 What we call our Naive Feed-forward network is the benchmark we made to test the efficacy of the models we were training. We tested several versions before deciding on a final candidate Naive Model. We had a categorical classifier, a regression model, and another categorical model with a better layer design.
@@ -13,8 +12,25 @@ Our first model had inputs of one hots for movies and users, mean, median and va
 For training the problem as a regression model we learned we had to be very careful with the layer selection. Too few layers and inadequate funneling down of the layers towards the output layer resulted in a model that was hopelessly lost at trying to find a gradient. We finally had success with a model using a hidden layers of size 512, 64, 8, and a linear output layer. After training we were surprised  because it had a very good RMSE score. Closer inspection showed that the model was predicting a floating point value that was always between 3.4 and 3.6, very close to the mean value of the data set. When we rounded the value and calculated the accuracy and RMSE it was only 21\% accurate with and RMSE of 1.203.
 
 \subsection{Neural Network Embeddings on the Netflix Dataset}
-\subsection{Neural Network Embeddings on the IMDB Dataset}
+Since it was unclear how, or whether, to attempt to model ratings in the latent space, several experiments were carried out on both the movie embeddings and user embeddings over the Netflix dataset:
+\begin{itemize}
+\item User Embeddings trained as CBOW across all rating events
+\item User Embeddings trained as CBOW across positive (>3 rating) rating events
+\item User Embeddings computed as a weighted mean of all movie embeddings for movies that a user has watched
+\item Movie Embeddings trained as CBOW across all rating events
+\item Movie Embeddings trained as CBOW across positive (>3 rating) rating events
+\item Movie Embeddings computed as a weighted mean of all user embeddings for movies that a user has watched
+\end{itemize}
 
+\subsection{Neural Network Embeddings on the IMDB Dataset}
+A principle contributor neural network embedding layer was built using CBOW training - treating the context for a principle as the other principles that had worked in conjunction with the target on a movie. The embedding dimension was 64, and this model was trained using noise contrastive error as loss for 500 epochs to a loss of 5.23. Movies embeddings were then computed as the mean of their constituent principle embeddings. 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.45\textwidth]{images/imdb_movie_embeddings_100.png}
+    \caption{TSNE Visualization of Embeddings for 100 Movies in the IMDB Movie Catalog}
+    \label{fig:TSNE IMDB Movie Embeddings}
+\end{figure}
+Since the Netflix and IMDB movie catalogs had significant overlap, but neither were a subset of the other, multitask training was planned to form a joint embedding space merging the features of both embeddings. Unfortunately due to time constraints, this could not be finished.
 \subsection{SVD Embeddings on the Netflix Dataset}
 
 In \cite{He2017} they use a process the call GMF or Generalized Matrix Factorization where they use gradient descent to train their embedding to learn the most important latent features
