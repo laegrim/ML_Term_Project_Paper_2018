@@ -8,7 +8,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: bibliography.bib
-I was expecting a `,' or a `}'---line 52 of file bibliography.bib
+I was expecting a `,' or a `}'---line 68 of file bibliography.bib
  : @misc{Piotte 
  :              09th Pragmatic,
 I'm skipping whatever remains of this entry
@@ -22,45 +22,45 @@ Warning--empty journal in imagenet
 Warning--empty journal in He2017
 
 Done.
-You've used 6 entries,
+You've used 8 entries,
             4566 wiz_defined-function locations,
-            940 strings with 9037 characters,
-and the built_in function-call counts, 3587 in all, are:
-= -- 299
-> -- 105
-< -- 8
-+ -- 52
-- -- 30
-* -- 210
-:= -- 594
-add.period$ -- 11
-call.type$ -- 6
-change.case$ -- 32
+            954 strings with 9486 characters,
+and the built_in function-call counts, 4935 in all, are:
+= -- 430
+> -- 151
+< -- 10
++ -- 73
+- -- 44
+* -- 294
+:= -- 838
+add.period$ -- 15
+call.type$ -- 8
+change.case$ -- 45
 chr.to.int$ -- 21
-cite$ -- 10
-duplicate$ -- 231
-empty$ -- 262
-format.name$ -- 32
-if$ -- 751
+cite$ -- 12
+duplicate$ -- 319
+empty$ -- 350
+format.name$ -- 48
+if$ -- 1036
 int.to.chr$ -- 0
-int.to.str$ -- 6
-missing$ -- 46
-newline$ -- 51
-num.names$ -- 10
-pop$ -- 164
+int.to.str$ -- 8
+missing$ -- 63
+newline$ -- 61
+num.names$ -- 14
+pop$ -- 210
 preamble$ -- 1
-purify$ -- 27
+purify$ -- 38
 quote$ -- 2
-skip$ -- 229
+skip$ -- 325
 stack$ -- 0
-substring$ -- 84
-swap$ -- 142
-text.length$ -- 1
+substring$ -- 96
+swap$ -- 198
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 6
-type$ -- 63
+type$ -- 85
 warning$ -- 4
-while$ -- 13
-width$ -- 7
-write$ -- 77
+while$ -- 17
+width$ -- 9
+write$ -- 101
 (There was 1 error message)
