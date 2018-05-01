@@ -6,5 +6,12 @@ Deep learning is a subset of machine learning wherein models learned contain mul
 \subsection{Embedding Layers}
 Embedding layers encode information about a set of objects and the relationships between those objects in a latent space - generally with fewer dimensions than the original space representing the objects \cite{DBLP:journals/corr/abs-1301-3781}. For example, given a corpus of text with a large vocabulary \textit{V}, it may be desireable to represent $\textit{v}\in\textit{V}$ such that $\mid\textit{rep(v)}\mid=\textit{k}$, where $\textit{k}\ll\mid\textit{V}\mid$ and that if \textit{v}, $\textit{x}\in\textit{V}$ occur together more frequently than \textit{v}, $\textit{y}\in\textit{V}$, \textit{v} will be closer to \textit{x} than \textit{y}.
 \subsubsection{Neural Network Embedding Layers}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.45\textwidth]{images/nn_embedding_layer.png}
+    \caption{Simple Embedding Layer Architecture}
+    \label{fig:Embedding Layer Architecture}
+\end{figure}
+An embedding layer as part of a neural network is framed as the weights of the hidden layer in a single hidden layer dense feedforward neural network. Generally there are two ways of training such a model; by predicting the target object given that object's context as input (Continuous Bag of Words - CBOW) or by predicting the context of a target object given that object as input (Skip-gram).
 
 \subsubsection{SVD Embedding Layers}
