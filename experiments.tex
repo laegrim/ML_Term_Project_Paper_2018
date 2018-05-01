@@ -33,9 +33,11 @@ A principle contributor neural network embedding layer was built using CBOW trai
 Since the Netflix and IMDB movie catalogs had significant overlap, but neither were a subset of the other, multitask training was planned to form a joint embedding space merging the features of both embeddings. Unfortunately due to time constraints, this could not be finished.
 \subsection{SVD Embeddings on the Netflix Dataset}
 
-In \cite{He2017} they use a process the call GMF or Generalized Matrix Factorization where they use gradient descent to train their embedding to learn the most important latent features
+In \cite{He2017} they use a process the call GMF or Generalized Matrix Factorization where they use gradient descent to train their embedding to learn the most important latent features.
 
 When considering the methods for representing User and Movie matrix factorization embeddings, we decided on using Single Value Decomposition, primarily because it is implemented in the scipy package, and could operate on sparse matrices. This was important because the original matrix we would be decomposing would be of size 440,000 x 17776 and would not possibly fit into memory. 
+
+We decided on a User embedding of rank 50 and a Movie embedding of rank 75. Although we did not extensively test these parameters, or use gradient descent to maximize them as \cite{He2017} did we reasoned that because the Movie embedding was reducing a large amount of features (400k vs 17k) it should be of a higher rank. 
 
 \subsection{Deep Feed-forward Neural Networks with Embedding Layers}
 
@@ -46,7 +48,7 @@ To test this we first trained to convergence a model that took as inputs both th
 
 We also tested using both the User SVD and the Movie SVD as the inputs. This would shrink the input size down from 17826 to 125. Training a model that again had 4 hidden layers we were able to reach an accuracy of 45\%. Clearly the representations did have value.
 
-Unfortunately we were not able to also train a model using user one hots and movie embeddings, as the input size made computation prohibitively dificult. 
+Unfortunately we were not able to also train a model using user one hots and movie embeddings, as the input size made computation prohibitively difficult. 
 
 
 
