@@ -1,8 +1,13 @@
 \section{Setup}
-test
-\subsection{The Netflix Dataset}
-test
+\subsection{The Netflix Prize Dataset}
+The Netflix dataset is formatted as a set of 100480507 rating events, each event including the user, movie, and date corresponding to the rating and the 1 - 5 score of the rating itself. In all, the dataset includes ratings from 480189 anonomyzed users in reference to 17770 individual movies and tv-show episodes. 
 \subsection{The IMDB Dataset}
-test
+The IMDB dataset is refreshed daily and is comprised of seven seperate sub-datasets, of which only three were used: 
+\begin{itemize}
+	\item title.basics.tsv - Basic information on titles in the IMDB catalog
+	\item title.principals.tsv - Principal cast and crew for each title in the IMDB catalog
+	\item name.basics.tsv - Basic information for cast and crew
+\end{itemize} 
+In total, 2290948 different titles for movies and tv-show episodes are included in the dataset and 8469380 different names corresponding to cast and crew.
 \subsection{Experimental Setup}
-test
+Experiments were conducted using Tensorflow-gpu 1.8.0, Keras 2.1.4, and CUDA 9.0. The machine on which the experiments ran had 32g ram, an i7-6700K CPU, and a GeForce GTX 1080 GPU. 

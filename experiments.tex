@@ -17,11 +17,21 @@ For training the problem as a regression model we learned we had to be very care
 
 \subsection{SVD Embeddings on the Netflix Dataset}
 
+In \cite{He2017} they use a process the call GMF or Generalized Matrix Factorization where they use gradient descent to train their embedding to learn the most important latent features
+
 When considering the methods for representing User and Movie matrix factorization embeddings, we decided on using Single Value Decomposition, primarily because it is implemented in the scipy package, and could operate on sparse matrices. This was important because the original matrix we would be decomposing would be of size 440,000 x 17776 and would not possibly fit into memory. 
 
 \subsection{Deep Feed-forward Neural Networks with Embedding Layers}
 
 \subsubsection{SVD Deep Embeddings}
-\subsubsubsection{User Embedding and Movie One Hot}
-\subsubsubsection{User Embedding and Movie Embedding}
+We needed some way to evaluate how useful the information presented by the SVD Embeddings would be to a deep learning model. We decided to train models on combinations of embeddings and one hots only, without other contextual information like, date of review, actor, genre, etc to see how useful these representations would be. This would tell us, given only a representation of likeness to other users we had computed, how well we could predict their tastes. If we could beat the threshold of randomly guessing or always rating 4, the marks set by our benchmark naive model, than the matrix factorization embeddings would be considered a success.
+
+To test this we first trained to convergence a model that took as inputs both the User SVD embedding and a one hot for its movie id. It was during training this model we experimented with adding more layers and funneling their output as mentioned in \cite{He2017} with hidden layers of our input size (17826), 1000, 100, 10, and a softmax output layer we were able to achieve an accuracy of around 42\%
+
+We also tested using both the User SVD and the Movie SVD as the inputs. This would shrink the input size down from 17826 to 125. Training a model that again had 4 hidden layers we were able to reach an accuracy of 45\%. Clearly the representations did have value.
+
+Unfortunately we were not able to also train a model using user one hots and movie embeddings, as the input size made computation prohibitively dificult. 
+
+
+
 \subsection{Hierarchical Architectures}

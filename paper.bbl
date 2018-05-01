@@ -44,6 +44,13 @@ X.~He, L.~Liao, H.~Zhang, L.~Nie, X.~Hu, and T.-S. Chua, ``{Neural
   \url{http://arxiv.org/abs/1708.05031}
 \BIBentrySTDinterwordspacing
 
+\bibitem{DBLP:journals/corr/abs-1301-3781}
+\BIBentryALTinterwordspacing
+T.~Mikolov, K.~Chen, G.~Corrado, and J.~Dean, ``Efficient estimation of word
+  representations in vector space,'' \emph{CoRR}, vol. abs/1301.3781, 2013.
+  [Online]. Available: \url{http://arxiv.org/abs/1301.3781}
+\BIBentrySTDinterwordspacing
+
 \bibitem{imagenetReasons}
 \BIBentryALTinterwordspacing
 H.~Quentin, ``Reasons to believe the a.i. boom is real,'' 03 2018. [Online].
@@ -56,6 +63,13 @@ H.~Quentin, ``Reasons to believe the a.i. boom is real,'' 03 2018. [Online].
 L.~Rizzatti, ``Digital data storage is undergoing mind-boggling growth,'' 09
   2016. [Online]. Available:
   \url{https://www.eetimes.com/author.asp?section_id=36&doc_id=1330462}
+\BIBentrySTDinterwordspacing
+
+\bibitem{DBLP:journals/corr/ZhangYS17aa}
+\BIBentryALTinterwordspacing
+S.~Zhang, L.~Yao, and A.~Sun, ``Deep learning based recommender system: {A}
+  survey and new perspectives,'' \emph{CoRR}, vol. abs/1707.07435, 2017.
+  [Online]. Available: \url{http://arxiv.org/abs/1707.07435}
 \BIBentrySTDinterwordspacing
 
 \end{thebibliography}
