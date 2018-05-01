@@ -21,25 +21,36 @@ Since it was unclear how, or whether, to attempt to model ratings in the latent 
 \item Movie Embeddings trained as CBOW across positive (>3 rating) rating events
 \item Movie Embeddings computed as a weighted mean of all user embeddings for movies that a user has watched
 \end{itemize}
-
+Latent Spaces for all experiments were 64 dimensions, and all embedding layers were trained with noise contrastive error loss. Weights were calculated as -1 for ratings of 1 and 2, and 1 for ratings of 3, 4, and 5 to attempt to separate movies in the latent space by rating sentiment. All embedding layers were trained for at least 100 epochs. Unfortunately an objective measure of the quality of a latent space was lacking in this case; NCE loss does not necessarily reflect the quality of the representation of semantic (object / object in this case) relationships across the latent space. To measure quality random samples were visualized across the latent space using TSNE and clustering was manually verified.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.45\textwidth]{images/nf_movie_emb_100.png}
+    \caption{TSNE visualization of unweighted embeddings over all movies for 100 movies in the Netflix movie catalog}
+    \label{fig:TSNE Netflix Unweighted Movie Embeddings}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.45\textwidth]{images/tsne_weighted_all_nf_movie_emb.png}
+    \caption{TSNE visualization of weighted embeddings over all movies for 100 movies in the Netflix movie catalog}
+    \label{fig:TSNE Netflix Weighted Movie Embeddings}
+\end{figure}
 \subsection{Neural Network Embeddings on the IMDB Dataset}
 A principle contributor neural network embedding layer was built using CBOW training - treating the context for a principle as the other principles that had worked in conjunction with the target on a movie. The embedding dimension was 64, and this model was trained using noise contrastive error as loss for 500 epochs to a loss of 5.23. Movies embeddings were then computed as the mean of their constituent principle embeddings. 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.45\textwidth]{images/imdb_movie_embeddings_100.png}
-    \caption{TSNE Visualization of Embeddings for 100 Movies in the IMDB Movie Catalog}
+    \caption{TSNE visualization of embeddings for 500 movies in the IMDB movie catalog}
     \label{fig:TSNE IMDB Movie Embeddings}
 \end{figure}
-Since the Netflix and IMDB movie catalogs had significant overlap, but neither were a subset of the other, multitask training was planned to form a joint embedding space merging the features of both embeddings. Unfortunately due to time constraints, this could not be finished.
+Since the Netflix and IMDB movie catalogs had significant overlap, but neither were a subset of the other, multitask training was planned to form a joint embedding space merging the features of both embeddings. In this case a new latent space would be by auto-encoder from the existing IMDB and Netflix embedding layers: for samples in one set but not the other the loss would be computed only on the set with membership, but for samples in both movie databases the loss would be computed jointly. Unfortunately due to time constraints, this could not be finished.
 \subsection{SVD Embeddings on the Netflix Dataset}
 
-In \cite{He2017} they use a process the call GMF or Generalized Matrix Factorization where they use gradient descent to train their embedding to learn the most important latent features.
+In \cite{He2017} they use a process the call GMF or Generalized Matrix Factorization where they use gradient descent to train their embedding to learn the most important latent features
 
 When considering the methods for representing User and Movie matrix factorization embeddings, we decided on using Single Value Decomposition, primarily because it is implemented in the scipy package, and could operate on sparse matrices. This was important because the original matrix we would be decomposing would be of size 440,000 x 17776 and would not possibly fit into memory. 
 
-We decided on a User embedding of rank 50 and a Movie embedding of rank 75. Although we did not extensively test these parameters, or use gradient descent to maximize them as \cite{He2017} did we reasoned that because the Movie embedding was reducing a large amount of features (400k vs 17k) it should be of a higher rank. 
-
 \subsection{Deep Feed-forward Neural Networks with Embedding Layers}
+A series of deep feed forward networks were trained using pairs of the netflix user / movie embedded layers as input: in each case these networks were fully connected, used leaky-relu activations with an alpha of .3 for the hidden layers and softmax for the output, had hidden layers of shape 512-128-32, and were optimized by SGD. For validation, 10\% of the training data was held out. Loss was categorical crossentropy, and each network was trained as a classification problem predicting probability of target rating 1-5. Unfortunately, all of these experiments failed, results are not reported. In no case did validation accuracy ever rise, and in some cases validation accuracy fell.
 
 \subsubsection{SVD Deep Embeddings}
 We needed some way to evaluate how useful the information presented by the SVD Embeddings would be to a deep learning model. We decided to train models on combinations of embeddings and one hots only, without other contextual information like, date of review, actor, genre, etc to see how useful these representations would be. This would tell us, given only a representation of likeness to other users we had computed, how well we could predict their tastes. If we could beat the threshold of randomly guessing or always rating 4, the marks set by our benchmark naive model, than the matrix factorization embeddings would be considered a success.
@@ -48,8 +59,5 @@ To test this we first trained to convergence a model that took as inputs both th
 
 We also tested using both the User SVD and the Movie SVD as the inputs. This would shrink the input size down from 17826 to 125. Training a model that again had 4 hidden layers we were able to reach an accuracy of 45\%. Clearly the representations did have value.
 
-Unfortunately we were not able to also train a model using user one hots and movie embeddings, as the input size made computation prohibitively difficult. 
-
-
-
+Unfortunately we were not able to also train a model using user one hots and movie embeddings, as the input size made computation prohibitively dificult. 
 \subsection{Hierarchical Architectures}
