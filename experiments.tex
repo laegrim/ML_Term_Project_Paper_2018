@@ -53,3 +53,16 @@ Unfortunately we were not able to also train a model using user one hots and mov
 
 
 \subsection{Hierarchical Architectures}
+
+As mentioned in our the approach section, our original intention was to construct our own version of a model similar to that of NCF as in figure~\ref{fig:NCF diagram}. Because of setbacks finding powerful embedding representation of user item interactions we were unable to construct that Hierarchical. 
+
+Even though we do not have experimental results from these models we would like to talk a bit about what exactly we were planning to build to replicated, and extend \cite{He2017} and what our reasoning was. As you can see in figure~\ref{fig:NCF diagram} in NCF embedding layers are run through several MLP layers, while the GMF their matrix factorization is simply found and concatenated at a joint layer just before the output layer. Given our positive results training a network on just the output of matrix factorization we reasoned that more useful arrangements could be made. We proposed the following two architectures.
+
+\begin{itemize}
+\item DNN SVD concatenated with DNN embedding layers
+\item combined SVD and embedding layer inputs
+\end{itemize}
+
+For the first model we would simple take our two trained models, the SVD Deep Embeddings model and the Deep model based on Netflix embeddings, remove there output layers and use them as inputs into a combining layer before a final output layer. This would allow learned information from different contexts to be combined in non-linear ways and possibly produce more accurate results.
+
+The second model we propose is simply to train one wide and deep model where the inputs are both the SVD embedding layers and the Netflix embedding layers. The difference being that it would learn for itself the relationship between the embeddings and decide how to combine them.
