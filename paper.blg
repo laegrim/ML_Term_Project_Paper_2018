@@ -1,6 +1,10 @@
 This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: paper.aux
+White space in argument---line 32 of file paper.aux
+ : \citation{Piotte
+ :                  09th Pragmatic}
+I'm skipping whatever remains of this command
 The style file: IEEEtranS.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -20,47 +24,48 @@ Warning--to sort, need author, organization, or key in netflixPrize
 Warning--empty journal in dataage2025
 Warning--empty journal in imagenet
 Warning--empty journal in He2017
+Warning--empty journal in bigChaos
 
 Done.
-You've used 8 entries,
+You've used 11 entries,
             4566 wiz_defined-function locations,
-            954 strings with 9486 characters,
-and the built_in function-call counts, 4935 in all, are:
-= -- 430
-> -- 151
+            970 strings with 9911 characters,
+and the built_in function-call counts, 6468 in all, are:
+= -- 565
+> -- 186
 < -- 10
-+ -- 73
-- -- 44
-* -- 294
-:= -- 838
-add.period$ -- 15
-call.type$ -- 8
-change.case$ -- 45
++ -- 89
+- -- 54
+* -- 373
+:= -- 1097
+add.period$ -- 21
+call.type$ -- 11
+change.case$ -- 59
 chr.to.int$ -- 21
-cite$ -- 12
-duplicate$ -- 319
-empty$ -- 350
-format.name$ -- 48
-if$ -- 1036
+cite$ -- 16
+duplicate$ -- 432
+empty$ -- 487
+format.name$ -- 60
+if$ -- 1368
 int.to.chr$ -- 0
-int.to.str$ -- 8
-missing$ -- 63
-newline$ -- 61
-num.names$ -- 14
-pop$ -- 210
+int.to.str$ -- 11
+missing$ -- 85
+newline$ -- 72
+num.names$ -- 20
+pop$ -- 281
 preamble$ -- 1
-purify$ -- 38
+purify$ -- 49
 quote$ -- 2
-skip$ -- 325
+skip$ -- 434
 stack$ -- 0
-substring$ -- 96
-swap$ -- 198
+substring$ -- 115
+swap$ -- 256
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 6
-type$ -- 85
-warning$ -- 4
-while$ -- 17
-width$ -- 9
-write$ -- 101
-(There was 1 error message)
+type$ -- 117
+warning$ -- 5
+while$ -- 23
+width$ -- 13
+write$ -- 126
+(There were 2 error messages)
